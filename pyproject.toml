@@ -1,0 +1,27 @@
+[project]
+name = "seach-and-built-vector-db"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "biopython>=1.85",
+    "ipykernel>=6.29.5",
+    "langchain-community>=0.3.21",
+    "langchain>=0.3.23",
+    "metapub>=0.5.12",
+    "openai>=0.28.0",
+    "pandas>=2.2.3",
+    "pubchempy>=1.0.4",
+    "pypdf>=5.4.0",
+    "pypdf2>=3.0.1",
+    "tqdm>=4.67.1",
+    "pdfplumber>=0.11.6",
+    "pinecone>=6.0.2",
+    "fitz>=0.0.1.dev2",
+    "requests>=2.32.3",
+    "rich>=13.9.4",
+    "langchain-pinecone>=0.2.5",
+    "numpy>=2.0.2",
+]
+
