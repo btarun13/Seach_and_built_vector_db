@@ -1,4 +1,4 @@
-# Build Vector DB and RAG
+# Build Vector DB and RAG(Will be updated)
 
 Search and Download papers on specific smiles. Then building Pinecone vector database.
 
