@@ -1,11 +1,24 @@
 # Build Vector DB and RAG(Will be updated)
 
-Search and Download papers on specific smiles. Then building Pinecone vector database.
+Building a Vector Database of Research Papers from SMILES Strings
 
-This was an idea when I was working on this dataset from: https://archive.ics.uci.edu/dataset/1104/drug_induced_autoimmunity_prediction
+This idea originated while I was working with a dataset from the UCI Machine Learning Repository:
+Drug-Induced Autoimmunity Prediction Dataset
 
-Suppose, You want to build my own database from all medical literature on a given molecule. With this project I try to extract all freely available papers on the molecule/term. After, The code automatically downloads pdfs on directory locally.
+The goal of this project is to build a custom knowledge base from medical literature for any given molecule, using its SMILES (Simplified Molecular Input Line Entry System) representation. Here's how the process works:
 
-Research_papers directory which will have pdfs is translated into embeddings for vector database(Pinecone). Then pdfs are deleted, this is because you don't want to clog your system memory. Every thing is now on pinecone database. 
+1. Search and Download Research Papers
+Given a SMILES string (or a related keyword), the program automatically searches for and downloads all freely available research papers related to that molecule or term. These PDFs are saved locally in a directory called Research_papers.
 
-In final part we just use this index for answering queries and citing sources. In case, you ask about something that is not in database, it will tell you that you don't have any information. This is a rudimentary RAG, it is slow. In case you want to use it bigger projects you would need to parallelize the code.
+
+2. Convert Papers to Embeddings
+The downloaded PDFs are processed and converted into text embeddings. These embeddings are then uploaded to a Pinecone vector database, enabling efficient similarity-based search and retrieval.
+
+
+3. Clean-Up
+Once the embeddings are stored in Pinecone, the local PDF files are deleted to save disk space. This ensures the system doesn't become overloaded with files.
+
+
+4. Querying the Database (RAG System)
+The final component allows users to query the Pinecone index. The system retrieves relevant information and provides citations from the indexed papers. If a query doesn't match any data in the index, it will simply inform you that there’s no relevant information available.
+This is a basic Retrieval-Augmented Generation (RAG) setup. While functional, it’s not highly optimized—it can be slow. For larger-scale applications, the code would need to be parallelized for better performance.
