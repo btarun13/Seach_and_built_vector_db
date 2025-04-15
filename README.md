@@ -21,4 +21,6 @@ Once the embeddings are stored in Pinecone, the local PDF files are deleted to s
 
 4. Querying the Database (RAG System)
 The final component allows users to query the Pinecone index. The system retrieves relevant information and provides citations from the indexed papers. If a query doesn't match any data in the index, it will simply inform you that there’s no relevant information available.
+
+
 This is a basic Retrieval-Augmented Generation (RAG) setup. While functional, it’s not highly optimized—it can be slow. For larger-scale applications, the code would need to be parallelized for better performance.
